@@ -1,0 +1,1 @@
+const add=function(d,n){return d+n};add(3,3),console.log(add(312,3));
