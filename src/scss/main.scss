@@ -9,6 +9,7 @@ html {
 body{
   	font-size: 1.6em;
     font-family: "Roboto", sans-serif;
+    
 }
 body,
 h1,
@@ -23,6 +24,38 @@ dd {
   margin: 0;
 }
 
+@mixin p-element {
+  font-size: 1.6rem;
+  font-weight: 300;
+  line-height: 2.4rem;
+  text-align: center;
+  @media (min-width: 1024px) {
+      text-align: left;
+  }
+}
+@mixin title-element {
+  font-size: 3.2rem;
+  line-height: 4.04rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+    @media (min-width: 1024px) {
+      font-size: 4.2rem;
+      line-height: 5.04rem;
+      margin-bottom: 2.4rem;
+
+  }
+}
+
+
+.main-content{
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  &--dark{
+    background-color: rgba(18, 18, 18, .5);
+  }
+  
+}
 .outer-wrapper{
   @media screen and (min-width: 1200px) {
     max-width: 1024px;
@@ -55,7 +88,7 @@ dd {
     align-items: center;
     flex-direction: column;
     margin-bottom: 2rem;
-   
+    z-index: -1;
     @media (min-width: 1024px) {
       flex-direction: row;
     }
@@ -77,25 +110,10 @@ dd {
      }
   }
   &__title{
-    font-size: 3.2rem;
-    line-height: 4.04rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-     @media (min-width: 1024px) {
-       font-size: 4.2rem;
-       line-height: 5.04rem;
-       margin-bottom: 2.4rem;
-
-    }
+    @include title-element;
   }
   &__paragraph{
-    font-size: 1.6rem;
-    font-weight: 300;
-    line-height: 2.4rem;
-    text-align: center;
-    @media (min-width: 1024px) {
-        text-align: left;
-    }
+    @include p-element;
   }
   &__btn{
     font-size: 1.6rem;
@@ -116,5 +134,45 @@ dd {
         background-color: #af7f65;
       }
     }
+  }
+}
+
+.modal{
+  background-color: red;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  align-items: center;
+  padding: 3rem;
+  width: 95%;
+  top: 50%;
+  left: 50%;
+  display: none;
+  transform: translate(-50%,-50%);
+  @media (min-width:1024px){
+    align-items: flex-start;
+    padding-top: 5.6rem;
+    padding-bottom: 5.6rem;
+    padding-left: 9.5rem;
+    width: 62rem;
+  }
+  @media (min-width:1200px){
+    width: 92rem;
+    transform: translate(-50%,-100%);
+  }
+  &__title{
+     @include title-element;
+  }
+  &__paragraph{
+    @include p-element;
+  }
+  &__close{
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    cursor: pointer;
+  }
+  &--open{
+    display: block;
   }
 }

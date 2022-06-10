@@ -1,1 +1,1 @@
-const add=function(d,n){return d+n};add(3,3),console.log(add(312,3));
+import Modal from"./Modal.js";const modalItem=document.querySelector(".modal"),mainElement=document.querySelector(".main-content"),modalObjet=new Modal(modalItem,mainElement);console.log("df");export default class Modal{constructor(o,e){this.modal=o,this.wrapper=e,this.show()}show(){return console.log(this.modal),console.log(this.wrapper),"dfg"}}

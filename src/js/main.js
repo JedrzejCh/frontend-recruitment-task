@@ -1,6 +1,6 @@
+import Modal from './Modal.js'
 
-const add = function (a,b) {
-    return a+b
-}
-add(3,3)
-console.log(add(312,3))
+const modalItem = document.querySelector(".modal")
+const mainElement = document.querySelector(".main-content")
+const modalObjet = new Modal(modalItem, mainElement)
+console.log('df')
