@@ -51,6 +51,19 @@ plik o rozszerzeniu css. **Tutaj warto dodać, że milej widziane są style pisa
     - ilość kliknięć w button ma być stale zapisana pod użytkownika,
     tak aby po odświeżeniu strony wartość nie powinna być zerowana
     - jeżeli ilość kliknięć przekroczy 5, w popupie powinien pokazać się przycisk do zresetowania licznika (inwencja twórcza)
+4. Dodać dodatkową funkcjonalność do popupa/buttona
+    - w popupie na dole ma pojawić się dynamicznie tabela z danych zaciąganych z
+    [endpointa](https://jsonplaceholder.typicode.com/users),
+    dane który powinny się pojawić na froncie:
+        - imię i nazwisko
+        - emial
+        - adres (jedno kolumna zawierająca miasto, ulice, mieszkanie)
+        - telefon
+        - nazwa firmy
+    - zaczytane mają być wszystkie osoby z danego pliku
+    - tabela nie musi posiadać żadnych konkretnych styli, ważne żeby wyglądała jak tabela
+    - dopóki tabela nie zostanie stworzona, należy dodać loaderek, sugerujący, że coś się dzieje
+    - funkcjonalność z ilością kliknięć z zadania wcześniejszego powinna zostać niezmieniona
 
 ### Co będziemy sprawdzać
 - Czy punkty w konkretnym zadaniu zostały spełnione

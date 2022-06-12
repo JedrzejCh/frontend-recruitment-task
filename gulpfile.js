@@ -8,7 +8,11 @@ const postcss = require('gulp-postcss');
 const autoprefixer = require('autoprefixer');
 const cssnano = require('cssnano');
 var replace = require('gulp-replace');
-
+const babel = require('gulp-babel');
+const browserify = require('browserify');
+const babelify = require('babelify');
+// const gulpBabel = require('gulp-babel');
+const gulp = require('gulp');
 // File paths
 const files = { 
     scssPath: 'src/scss/**/*.scss',
@@ -18,7 +22,7 @@ const files = {
 function scssTask(){    
     return src(files.scssPath)
         .pipe(sourcemaps.init()) // initialize sourcemaps first
-        .pipe(sass([])) // compile SCSS to CSS
+        .pipe(sass()) // compile SCSS to CSS
         .pipe(postcss([ autoprefixer(), cssnano() ])) // PostCSS plugins
         .pipe(sourcemaps.write('.')) // write sourcemaps file in current directory
         .pipe(dest('dist')
@@ -34,6 +38,14 @@ function jsTask(){
         .pipe(dest('dist')
     );
 }
+
+     gulp.task('es6-compile', function() {
+      browserify({ debug: true })
+        .transform(babelify.configure({ presets: ["es2015"] }))
+        .require("/dist/all.js", { entry: true })
+        .bundle()
+        .pipe(gulp.dest('dist'));
+    });
 
 var cbString = new Date().getTime();
 function cacheBustTask(){
