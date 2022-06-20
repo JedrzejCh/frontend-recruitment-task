@@ -14,9 +14,6 @@ const postcss = require('gulp-postcss');
 const autoprefixer = require('autoprefixer');
 const cssnano = require('cssnano');
 var replace = require('gulp-replace');
-const babel = require('gulp-babel');
-const browserify = require('browserify');
-const babelify = require('babelify');
 const webpack = require("webpack-stream");
 const gulp = require('gulp');
 const loader = require('babel-loader')
@@ -45,15 +42,18 @@ function jsTask() {
           path: __dirname + '/dist',
           filename: 'all.js'
         },
+         experiments: {
+          topLevelAwait: true
+        },
         module: {
           rules: [{
             test: /\.js$/,
-            loader: 'babel-loader'
+            loader: 'babel-loader',
           }]
         }
       })
     )
-    .pipe(uglify())
+    // .pipe(uglify())
     .pipe(gulp.dest('dist/'));
 }
 

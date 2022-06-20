@@ -1,0 +1,36 @@
+.table-section{
+  position: relative;
+  overflow: auto;
+  height: 100%;
+
+}
+
+.modal-table{
+  margin-top: 3.4rem;
+  border-collapse: collapse;
+  tr:first-of-type{
+    background-color: #f3f3f3;
+  }
+  tr {
+   
+     th {
+        font-size: 1.5rem;
+     }
+     td {
+       border: 1px solid #f3f3f3;
+       font-size: 1.3rem;
+       min-width: 20rem;
+       text-align: center;
+       @media (min-width: 1200px){
+          min-width: fit-content;
+      }
+     }
+     th,td{
+      padding: 0.2rem;
+      color: #333;
+      @media (min-width: 768px){
+          padding: 0.5rem;
+      }
+     }
+  }
+}

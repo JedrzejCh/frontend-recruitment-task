@@ -1,13 +1,21 @@
+import Counter from "./Counter"
+
 export default class Modal {
-    constructor(modal, wrapper) {
+    constructor(modal, wrapper, peopleTable) {
         this.modal = modal,
         this.wrapper = wrapper
-        this.triggerBtn = document.querySelector('[data-modal-trigger]')
-        this.closeBtn = document.querySelector('[data-modal-close]')
+        this.triggerBtn = this.wrapper.querySelector('[data-modal-trigger]')
+        this.closeBtn = this.wrapper.querySelector('[data-modal-close]')
+        this.counterField = this.wrapper.querySelector(".counter-value")
+        this.resetBtn = this.wrapper.querySelector(".reset-btn")
+        this.counter = new Counter(this.counterField, this.resetBtn)
+        this.peopleTable = peopleTable
         this.initListeners()
+     
     }
-    openModal() {
+   async openModal() {
         this.modal.classList.add('open')
+        await this.peopleTable.init()
     }
     closeModal() {
         this.modal.classList.remove('open')
@@ -17,7 +25,8 @@ export default class Modal {
         this.event = new CustomEvent('modal', {
             detail: {
                 open: overlayState
-            }
+            },
+            bubbles: true
         })
         this.wrapper.dispatchEvent(this.event)
     }
@@ -34,6 +43,7 @@ export default class Modal {
         this.triggerBtn?.addEventListener('click', (e) => {
             this.openModal()
             this.initEvent(e.currentTarget.dataset.open)
+            this.counter.count()
         })
         
         this.closeBtn?.addEventListener('click', (e) => {

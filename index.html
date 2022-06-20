@@ -33,11 +33,25 @@
                 </div>
             </section>
             <div class="modal">
-                <h2 class="modal__title">Alert!</h2>
-                <p class="modal__paragraph">You have clicked <strong><span class="counter-value">X</span> times</strong> to related button.</p>
+                <div class="modal__heading-wrapper">
+                    <h2 class="modal__title">Alert!</h2>
+                    <p class="modal__paragraph">You have clicked <strong><span class="counter-value">X</span> times</strong> to related button.</p>
+                    <button class="reset-btn">Reset</button>
+                </div>
+               
                 <span class="modal__close" data-modal-close data-open="false">
                     <svg  fill="#000000" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 24 24" width="20px" height="20px"><path d="M 4.7070312 3.2929688 L 3.2929688 4.7070312 L 10.585938 12 L 3.2929688 19.292969 L 4.7070312 20.707031 L 12 13.414062 L 19.292969 20.707031 L 20.707031 19.292969 L 13.414062 12 L 20.707031 4.7070312 L 19.292969 3.2929688 L 12 10.585938 L 4.7070312 3.2929688 z"/></svg>
                 </span>
+               <section class="table-section">
+                    <table class="modal-table"></table>
+                    <div class="loader-wrapper">
+                        <div class="loader">
+                            <div></div>
+                            <div></div>
+                        </div>
+                    </div>
+               </section>
+                
             </div>
          </article>
     </main>
