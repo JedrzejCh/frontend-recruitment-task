@@ -1,14 +1,13 @@
 import axios from 'axios';
 
-const API = 'https://jsonplaceholder.typicode.com/users'
+ const API = 'https://jsonplaceholder.typicode.com/users'
 
 export const sendPeopleRequest = async () => {
     try {
         const response = await axios.get(`${API}`)
-        console.log(response)
-        return response
-    } 
+        return response.data
+    }
     catch (err) {
-        console.error(err);
+        throw Error(err)
     }
 };

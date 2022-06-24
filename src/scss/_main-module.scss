@@ -6,26 +6,25 @@
   width: 100%;
   display: flex;
   align-items: center;
+  flex-direction: column;
   &--dark{
     background-color: rgba(18, 18, 18, .5);
+    position: fixed;
+    top: 0;
+    left: 0;
   }
-  
 }
-.outer-wrapper{
-  @media screen and (min-width: 1200px) {
-    max-width: 1024px;
-    margin:  0 auto;
-  }
-  @media screen and (min-width: 1600px) {
-    max-width: 1440px;
 
-  }
-}
 
 .main-section{
   padding: 2rem;
   display: flex;
   flex-direction: column;
+  &:first-of-type{
+    @media (min-width: 1200px){
+      margin-top: 5.4rem;
+    }
+  }
    @media (min-width: 768px) {
     padding: 4rem;
    }

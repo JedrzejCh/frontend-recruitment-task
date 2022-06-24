@@ -46,7 +46,8 @@
     cursor: pointer;
   }
   &.open{
-    display: block;
+    // display: block;
+    display: flex;
   }
   .reset-btn{
     @extend .main-section__btn;
