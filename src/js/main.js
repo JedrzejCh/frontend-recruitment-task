@@ -1,6 +1,17 @@
-import Modal from './Modal.js'
 
-const modalItem = document.querySelector(".modal")
-const mainElement = document.querySelector(".main-content")
-const modalObjet = new Modal(modalItem, mainElement)
-console.log('df')
+import Modal from './Modal'
+import PeopleTable from './PeopleTable'
+
+
+
+    class App{
+      create () {
+        const peopleTable = new PeopleTable()
+        const modal = new Modal(peopleTable)
+      }
+    }
+
+    const app = new App()
+
+    app.create()
+

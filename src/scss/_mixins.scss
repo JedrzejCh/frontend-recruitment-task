@@ -1,0 +1,21 @@
+@mixin p-element {
+  font-size: 1.6rem;
+  font-weight: 300;
+  line-height: 2.4rem;
+  text-align: center;
+  @media (min-width: 1024px) {
+      text-align: left;
+  }
+}
+@mixin title-element {
+  font-size: 3.2rem;
+  line-height: 4.04rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+    @media (min-width: 1024px) {
+      font-size: 4.2rem;
+      line-height: 5.04rem;
+      margin-bottom: 2.4rem;
+
+  }
+}
